@@ -6,95 +6,99 @@
     <title>Ayoub_200 | Minecraft Developer</title>
     <style>
         :root {
-            --primary: #00ff88; /* الأخضر الفسفوري مثل موقع فخري */
-            --bg: #0a0a0a;
-            --card-bg: #151515;
+            --primary: #00ff88; 
+            --bg: #050505; 
             --text: #ffffff;
         }
 
         body {
             background-color: var(--bg);
+            background-image: 
+                linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
             color: var(--text);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             text-align: center;
+            position: relative;
+        }
+
+        /* اسم الديسكورد في الزاوية العليا اليسرى */
+        .discord-tag {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--primary);
+            padding-left: 10px;
+            font-size: 1.1rem;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             padding: 20px;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
-        }
-
-        .highlight {
-            color: var(--primary);
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #888;
-            margin-bottom: 30px;
-        }
-
-        .skills {
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
+        h1 { font-size: 4.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: -3px; }
+        .highlight { color: var(--primary); }
+        .skills { color: var(--primary); font-weight: bold; margin-bottom: 30px; letter-spacing: 3px; font-size: 1rem; }
+        p { font-size: 1.2rem; color: #aaa; line-height: 1.6; margin-bottom: 45px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        
         .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
+            padding: 15px 40px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
+            border: 2px solid var(--primary);
             font-size: 1rem;
+            text-transform: uppercase;
         }
 
-        .btn-primary {
+        /* زر Why Me باللون الأخضر الكامل */
+        .btn-why {
             background-color: var(--primary);
             color: black;
         }
 
-        .btn-secondary {
-            border: 2px solid var(--primary);
+        /* زر المشاريع مفرغ (Outline) */
+        .btn-projects {
             color: var(--primary);
+            background: transparent;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+            background: var(--primary);
+            color: black;
         }
     </style>
 </head>
 <body>
 
+    <!-- اسم الديسكورد في الزاوية العليا اليسرى -->
+    <div class="discord-tag">DISCORD: ayoub_200</div>
+
     <div class="container">
         <h1>BACKEND <span class="highlight">DEVELOPER</span></h1>
-        <div class="skills">Java • SQL • Server Optimization • Security</div>
+        <div class="skills">JAVA • SQL • SECURITY • OPTIMIZATION</div>
         
         <p>I build high-performance core systems for Minecraft networks. Specialized in database synchronization, anti-lag infrastructure, and network security.</p>
 
         <div class="btn-group">
-            <a href="My discord .ayoub_200" class="btn btn-primary">Hire Me</a>
-            <a href="https://github.com/ayoub-Devolper/UltimisMC-Core-Systems/tree/main" class="btn btn-secondary">My Projects</a>
+            <!-- زر Why Me بجانب زر المشاريع -->
+            <a href="why-me.html" class="btn btn-why">Why Me?</a>
+            <a href="https://github.com" class="btn btn-projects">My Projects</a>
         </div>
     </div>
 
