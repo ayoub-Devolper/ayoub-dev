@@ -147,73 +147,81 @@
         transition: width 2s ease-in-out;
     }
 </style>
-<!-- قسم المهارات النيون تحت - التفوق التقني -->
-<!-- قسم المهارات النيون في أسفل الصفحة - الضربة القاضية -->
+<!-- قسم المهارات التقنية - تحت Why Me -->
+<div style="clear: both; width: 100%; height: 50px;"></div> <!-- مسافة بسيطة -->
+
 <style>
-    .skills-footer-section {
-        max-width: 1000px; /* عريض عشان يملأ الشاشة تحت */
-        margin: 100px auto 50px auto; /* مساحة كبيرة فوقه عشان تضطر تنزل له */
-        padding: 50px;
-        background: rgba(0, 0, 0, 0.95);
-        border-top: 3px solid #39FF14; /* خط علوي نيون يفصله عن اللي فوقه */
-        border-bottom: 3px solid #39FF14;
-        border-radius: 30px;
-        box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+    .skills-grid-section {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.85);
+        border: 1px solid #39FF14;
+        border-radius: 15px;
         font-family: 'Courier New', monospace;
     }
-    .footer-skill-title {
+    .skills-header {
         color: #39FF14;
-        text-shadow: 0 0 20px #39FF14;
         text-align: center;
-        font-size: 2.8rem;
-        margin-bottom: 60px;
-        letter-spacing: 5px;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
-    .footer-bar-container { margin-bottom: 40px; }
-    .footer-label {
+    .skill-box { margin-bottom: 20px; }
+    .skill-info-text {
         display: flex;
         justify-content: space-between;
         color: #fff;
-        font-size: 1.3rem;
-        margin-bottom: 15px;
+        font-size: 1rem;
+        margin-bottom: 8px;
     }
-    .footer-label b { color: #39FF14; font-size: 1.6rem; }
-    .footer-bar-bg {
-        height: 20px;
-        background: #0a0a0a;
-        border-radius: 20px;
-        border: 1px solid #333;
+    .skill-info-text b { color: #39FF14; }
+    .progress-track {
+        height: 12px;
+        background: #111;
+        border-radius: 10px;
+        border: 1px solid #222;
         overflow: hidden;
-        box-shadow: inset 0 0 10px #000;
     }
-    .footer-bar-fill {
+    .progress-fill-neon {
         height: 100%;
         background: linear-gradient(90deg, #1d6e0a, #39FF14);
-        box-shadow: 0 0 25px #39FF14;
-        border-radius: 20px;
+        box-shadow: 0 0 10px #39FF14;
+        border-radius: 10px;
     }
 </style>
 
-<div class="skills-footer-section">
-    <h2 class="footer-skill-title">TECHNICAL MASTERY</h2>
+<div class="skills-grid-section">
+    <h2 class="skills-header">Technical Skillset</h2>
 
-    <div class="footer-bar-container">
-        <div class="footer-label">Java Backend Development <b>95%</b></div>
-        <div class="footer-bar-bg"><div class="footer-bar-fill" style="width: 95%;"></div></div>
+    <!-- Java: أنت مبرمج باك-إند، هذي قوتك -->
+    <div class="skill-box">
+        <div class="skill-info-text">Java Backend (Spigot/Paper) <b>95%</b></div>
+        <div class="progress-track"><div class="progress-fill-neon" style="width: 95%;"></div></div>
     </div>
 
-    <div class="footer-bar-container">
-        <div class="footer-label">Security & Anti-Cheat Infrastructure <b>92%</b></div>
-        <div class="footer-bar-bg"><div class="footer-bar-fill" style="width: 92%;"></div></div>
+    <!-- YAML: أساسي جداً للـ Configurator -->
+    <div class="skill-box">
+        <div class="skill-info-text">YAML Configuration & Systems <b>90%</b></div>
+        <div class="progress-track"><div class="progress-fill-neon" style="width: 90%;"></div></div>
     </div>
 
-    <div class="footer-bar-container">
-        <div class="footer-label">Server Performance & SQL Optimization <b>90%</b></div>
-        <div class="footer-bar-bg"><div class="footer-bar-fill" style="width: 90%;"></div></div>
+    <!-- Security: مشروع SentinelShield يدعم هذا -->
+    <div class="skill-box">
+        <div class="skill-info-text">Security & Anti-Cheat Logic <b>88%</b></div>
+        <div class="progress-track"><div class="progress-fill-neon" style="width: 88%;"></div></div>
     </div>
-</div>
 
-        <div class="skill-label-new">Server Performance & Optimization <b>90%</b></div>
-        <div class="bar-outer-new"><div class="bar-inner-new" style="width: 90%;"></div></div>
+    <!-- Performance: نظام الكاش يدعم هذا -->
+    <div class="skill-box">
+        <div class="skill-info-text">Server Performance & Optimization <b>85%</b></div>
+        <div class="progress-track"><div class="progress-fill-neon" style="width: 85%;"></div></div>
+    </div>
+
+    <!-- HTML: واقعي لأنك باك-إند وطورت موقعك بنفسك -->
+    <div class="skill-box">
+        <div class="skill-info-text">HTML / CSS (Web Design) <b>80%</b></div>
+        <div class="progress-track"><div class="progress-fill-neon" style="width: 80%;"></div></div>
     </div>
 </div>
