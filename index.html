@@ -3,97 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoub | Senior Backend Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <title>ayoub_200 | Minecraft Developer</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
-        :root { --primary: #39FF14; --bg: #030303; }
+        :root { --primary: #39FF14; --bg: #050505; --card: #111111; }
         
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background: var(--bg); 
             color: #fff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            display: flex; 
-            align-items: center; 
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif; 
             overflow-x: hidden;
-            /* خلفية الشبكة النيون المتطورة */
+            /* الإضاءة النيون في الزوايا مثل موقع فخري */
             background-image: 
-                linear-gradient(rgba(57, 255, 20, 0.05) 1.5px, transparent 1.5px),
-                linear-gradient(90deg, rgba(57, 255, 20, 0.05) 1.5px, transparent 1.5px);
-            background-size: 60px 60px;
+                radial-gradient(circle at 0% 0%, rgba(57, 255, 20, 0.1) 0%, transparent 35%),
+                radial-gradient(circle at 100% 100%, rgba(57, 255, 20, 0.05) 0%, transparent 35%);
+            line-height: 1.6;
         }
 
-        .main-wrapper {
+        /* القائمة العلوية الشفافة (Navbar) */
+        nav {
             display: flex;
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
             justify-content: space-between;
             align-items: center;
-            gap: 50px;
+            padding: 25px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #888; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
 
-        /* الجزء الأيسر: التعريف */
-        .info-section { flex: 1.5; }
-        h1 { font-size: 5rem; margin: 0; text-transform: uppercase; letter-spacing: -3px; line-height: 0.9; }
-        .highlight { color: var(--primary); text-shadow: 0 0 25px var(--primary); }
-        .sub-tags { color: var(--primary); font-weight: bold; margin: 25px 0; letter-spacing: 4px; font-size: 1.3rem; }
-        p { font-size: 1.5rem; color: #ccc; max-width: 700px; line-height: 1.5; margin-bottom: 50px; }
-
-        .btn-group { display: flex; gap: 25px; }
-        .btn { padding: 18px 45px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: 0.3s; border: 2.5px solid var(--primary); }
-        .btn-why { background: var(--primary); color: #000; }
-        .btn-projects { color: var(--primary); background: transparent; }
-        .btn:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(57, 255, 20, 0.5); }
-
-        /* الجزء الأيمن: الخبرات العملاقة */
-        .skills-vault { 
-            flex: 1; 
-            background: rgba(0,0,0,0.8); 
-            padding: 50px; 
-            border: 2px solid var(--primary); 
-            border-radius: 20px; 
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+        /* الجزء الرئيسي (Hero Section) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
         }
-        .skill-unit { margin-bottom: 40px; }
-        .skill-name { display: flex; justify-content: space-between; font-size: 1.4rem; margin-bottom: 12px; color: #fff; font-weight: bold; }
-        .skill-name span { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
-        .bar-container { height: 18px; background: #111; border-radius: 20px; overflow: hidden; border: 1px solid #333; }
-        .bar-active { height: 100%; background: linear-gradient(90deg, #1d6e0a, var(--primary)); box-shadow: 0 0 15px var(--primary); border-radius: 20px; }
+        .hero h1 { font-size: 5rem; font-weight: 800; letter-spacing: -3px; line-height: 1; margin-bottom: 15px; }
+        .hero .role { font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-bottom: 30px; letter-spacing: 2px; }
+        .hero p { max-width: 600px; color: #777; font-size: 1.1rem; margin-bottom: 40px; }
+
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.4s; }
+        .btn-primary { background: var(--primary); color: #000; box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2); }
+        .btn-secondary { border: 1px solid #333; color: #fff; }
+        .btn:hover { transform: translateY(-5px); scale: 1.05; }
+
+        /* قسم المهارات (البطاقات الصغيرة) */
+        .section { padding: 100px 10%; text-align: center; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 50px; }
+        .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 900px; margin: 0 auto; }
+        .skill-tag { background: var(--card); padding: 15px 30px; border-radius: 12px; border: 1px solid #222; font-weight: 600; transition: 0.3s; }
+        .skill-tag:hover { border-color: var(--primary); background: rgba(57, 255, 20, 0.05); transform: translateY(-3px); }
+
+        /* قسم المشاريع (البطاقات الكبيرة مثل فخري) */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 50px; }
+        .project-card { background: var(--card); padding: 40px; border-radius: 20px; border: 1px solid #222; text-align: left; transition: 0.4s; }
+        .project-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .project-card h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; }
+        .project-card p { color: #666; font-size: 0.95rem; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 3.5rem; } }
     </style>
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="info-section">
-            <h1>BACKEND <br><span class="highlight">DEVELOPER</span></h1>
-            <div class="sub-tags">JAVA • SQL • SECURITY • OPTIMIZATION</div>
-            <p>I build high-performance core systems for Minecraft networks. Specialized in database synchronization, anti-lag infrastructure, and network security.</p>
-            <div class="btn-group">
-                <a href="why-me.html" class="btn btn-why">WHY ME?</a>
-                <a href="https://github.com/ayoub-Devolper/Minecraft-Advanced-Systems/tree/main" class="btn btn-projects">MY PROJECTS</a>
-            </div>
-        </div>
 
-        <div class="skills-vault">
-            <h2 style="color:var(--primary); text-align:center; margin-bottom:40px; letter-spacing:3px;">TECHNICAL SKILLS</h2>
-            <div class="skill-unit">
-                <div class="skill-name">Java Backend <span>95%</span></div>
-                <div class="bar-container"><div class="bar-active" style="width: 95%;"></div></div>
+    <nav>
+        <div class="logo">ayoub<span>_200</span></div>
+        <ul class="nav-links">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="https://github.com">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Backend Developer</h1>
+        <div class="role">Java • Security • Optimization</div>
+        <p>I build high-performance infrastructure for Minecraft networks. Expert in Packet-level Anti-Cheats and SQL data synchronization.</p>
+        <div class="btn-group">
+            <a href="https://github.com" class="btn btn-primary">Hire Me</a>
+            <a href="#projects" class="btn btn-secondary">View Work</a>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Java (Spigot/Paper)</div>
+            <div class="skill-tag">Packet Listening</div>
+            <div class="skill-tag">Anti-Cheat Logic</div>
+            <div class="skill-tag">SQL & NoSQL</div>
+            <div class="skill-tag">Performance Tuning</div>
+            <div class="skill-tag">YAML Systems</div>
+            <div class="skill-tag">HTML / CSS</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>SentinelShield Pro</h3>
+                <p>Advanced hybrid anti-cheat system using packet interception for 100% clean gameplay.</p>
             </div>
-            <div class="skill-unit">
-                <div class="skill-name">Security & Anti-Cheat <span>92%</span></div>
-                <div class="bar-container"><div class="bar-active" style="width: 90%;"></div></div>
+            <div class="project-card">
+                <h3>Hyper-Cache SQL</h3>
+                <p>High-speed database synchronization reducing server load by 90% in large networks.</p>
             </div>
-            <div class="skill-unit">
-                <div class="skill-name">YAML & Systems <span>90%</span></div>
-                <div class="bar-container"><div class="bar-active" style="width: 88%;"></div></div>
-            </div>
-            <div class="skill-unit">
-                <div class="skill-name">Server Optimization <span>88%</span></div>
-                <div class="bar-container"><div class="bar-active" style="width: 85%;"></div></div>
+            <div class="project-card">
+                <h3>NBT Engine</h3>
+                <p>Custom item attribute engine for complex RPG systems and unique game mechanics.</p>
             </div>
         </div>
-    </div>
+    </section>
+
 </body>
 </html>
