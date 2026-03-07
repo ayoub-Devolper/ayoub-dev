@@ -104,6 +104,40 @@
             </div>
         </div>
     </section>
+    <!-- تأثير النقرات البرمجية النيون -->
+    <script>
+    document.addEventListener('click', function(e) {
+        const symbols = ['{ }', '</>', 'Java', 'SQL', '1010'];
+        const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+        
+        const el = document.createElement('div');
+        el.innerText = symbol;
+        el.style.position = 'fixed';
+        el.style.left = e.clientX + 'px';
+        el.style.top = e.clientY + 'px';
+        el.style.color = '#39FF14';
+        el.style.textShadow = '0 0 10px #39FF14';
+        el.style.fontWeight = 'bold';
+        el.style.pointerEvents = 'none';
+        el.style.zIndex = '9999';
+        el.style.fontFamily = 'monospace';
+        el.style.fontSize = '1.2rem';
+        el.style.transition = 'all 1s ease-out';
+        
+        document.body.appendChild(el);
+        
+        setTimeout(() => {
+            el.style.transform = `translateY(-100px) rotate(${Math.random() * 360}deg)`;
+            el.style.opacity = '0';
+        }, 10);
+        
+        setTimeout(() => { el.remove(); }, 1000);
+    });
+    </script>
 
 </body>
 </html>
+
+    setTimeout(() => { el.remove(); }, 1000);
+});
+</script>
