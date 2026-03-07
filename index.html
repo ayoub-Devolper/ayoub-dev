@@ -148,63 +148,71 @@
     }
 </style>
 <!-- قسم المهارات النيون تحت - التفوق التقني -->
+<!-- قسم المهارات النيون في أسفل الصفحة - الضربة القاضية -->
 <style>
-    .skills-section-new {
-        max-width: 900px;
-        margin: 80px auto; /* يخليه في النص مع مساحة فوق وتحت */
-        padding: 40px;
-        background: rgba(0, 0, 0, 0.9);
-        border: 2px solid #39FF14;
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+    .skills-footer-section {
+        max-width: 1000px; /* عريض عشان يملأ الشاشة تحت */
+        margin: 100px auto 50px auto; /* مساحة كبيرة فوقه عشان تضطر تنزل له */
+        padding: 50px;
+        background: rgba(0, 0, 0, 0.95);
+        border-top: 3px solid #39FF14; /* خط علوي نيون يفصله عن اللي فوقه */
+        border-bottom: 3px solid #39FF14;
+        border-radius: 30px;
+        box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
         font-family: 'Courier New', monospace;
     }
-    .skill-title-new {
+    .footer-skill-title {
         color: #39FF14;
-        text-shadow: 0 0 15px #39FF14;
+        text-shadow: 0 0 20px #39FF14;
         text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        letter-spacing: 3px;
+        font-size: 2.8rem;
+        margin-bottom: 60px;
+        letter-spacing: 5px;
     }
-    .skill-bar-container { margin-bottom: 35px; }
-    .skill-label-new {
+    .footer-bar-container { margin-bottom: 40px; }
+    .footer-label {
         display: flex;
         justify-content: space-between;
         color: #fff;
-        font-size: 1.2rem;
-        margin-bottom: 12px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
     }
-    .skill-label-new b { color: #39FF14; font-size: 1.4rem; }
-    .bar-outer-new {
-        height: 18px;
-        background: #111;
-        border-radius: 15px;
+    .footer-label b { color: #39FF14; font-size: 1.6rem; }
+    .footer-bar-bg {
+        height: 20px;
+        background: #0a0a0a;
+        border-radius: 20px;
         border: 1px solid #333;
         overflow: hidden;
+        box-shadow: inset 0 0 10px #000;
     }
-    .bar-inner-new {
+    .footer-bar-fill {
         height: 100%;
         background: linear-gradient(90deg, #1d6e0a, #39FF14);
-        box-shadow: 0 0 20px #39FF14;
-        border-radius: 15px;
+        box-shadow: 0 0 25px #39FF14;
+        border-radius: 20px;
     }
 </style>
 
-<div class="skills-section-new">
-    <h2 class="skill-title-new">TECHNICAL EXPERTISE</h2>
+<div class="skills-footer-section">
+    <h2 class="footer-skill-title">TECHNICAL MASTERY</h2>
 
-    <div class="skill-bar-container">
-        <div class="skill-label-new">Java Backend Development <b>95%</b></div>
-        <div class="bar-outer-new"><div class="bar-inner-new" style="width: 95%;"></div></div>
+    <div class="footer-bar-container">
+        <div class="footer-label">Java Backend Development <b>95%</b></div>
+        <div class="footer-bar-bg"><div class="footer-bar-fill" style="width: 95%;"></div></div>
     </div>
 
-    <div class="skill-bar-container">
-        <div class="skill-label-new">Security & Anti-Cheat Systems <b>92%</b></div>
-        <div class="bar-outer-new"><div class="bar-inner-new" style="width: 92%;"></div></div>
+    <div class="footer-bar-container">
+        <div class="footer-label">Security & Anti-Cheat Infrastructure <b>92%</b></div>
+        <div class="footer-bar-bg"><div class="footer-bar-fill" style="width: 92%;"></div></div>
     </div>
 
-    <div class="skill-bar-container">
+    <div class="footer-bar-container">
+        <div class="footer-label">Server Performance & SQL Optimization <b>90%</b></div>
+        <div class="footer-bar-bg"><div class="footer-bar-fill" style="width: 90%;"></div></div>
+    </div>
+</div>
+
         <div class="skill-label-new">Server Performance & Optimization <b>90%</b></div>
         <div class="bar-outer-new"><div class="bar-inner-new" style="width: 90%;"></div></div>
     </div>
