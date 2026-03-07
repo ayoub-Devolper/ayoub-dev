@@ -134,10 +134,69 @@
         setTimeout(() => { el.remove(); }, 1000);
     });
     </script>
+    <!-- 1. خلفية الماتريكس (تأثير المطر البرمجي) -->
+    <canvas id="matrixCanvas" style="position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.1; pointer-events: none;"></canvas>
+    
+    <script>
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.onresize = resize; resize();
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/{}/";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+    function drawMatrix() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#39FF14";
+        ctx.font = fontSize + "px monospace";
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
+        }
+    }
+    setInterval(drawMatrix, 50);
+    </script>
+
+    <!-- 2. شات ماين كرافت السري -->
+    <div id="mc-chat-box">
+        <div id="chat-logs"><div style="color: #aaa;">[System] Press 'T' to chat...</div></div>
+        <input type="text" id="chat-input" placeholder="Type /info, /op, or /help..." onkeydown="handleCommand(event)">
+    </div>
+
+    <style>
+    #mc-chat-box { position: fixed; bottom: 20px; left: 20px; width: 320px; background: rgba(0, 0, 0, 0.8); border: 2px solid #555; padding: 10px; z-index: 10000; font-family: 'Courier New', monospace; }
+    #chat-logs { height: 100px; overflow-y: auto; font-size: 0.9rem; color: #fff; margin-bottom: 5px; }
+    #chat-input { width: 100%; background: transparent; border: none; color: #fff; outline: none; border-top: 1px solid #333; padding-top: 5px; }
+    .mc-gold { color: #FFAA00; } .mc-red { color: #FF5555; } .mc-green { color: #55FF55; }
+    </style>
+
+    <script>
+    function handleCommand(e) {
+        if (e.key === 'Enter') {
+            const input = document.getElementById('chat-input');
+            const logs = document.getElementById('chat-logs');
+            const cmd = input.value.toLowerCase();
+            let response = "";
+            if (cmd === '/info') { response = "<span class='mc-gold'>[System]</span> Ayoub is the Lead Java Dev."; }
+            else if (cmd.includes('/op')) { response = "<span class='mc-red'>[Error]</span> Ayoub is already the Owner!"; }
+            else if (cmd === '/help') { response = "Commands: /info, /op, /clear"; }
+            else if (cmd === '/clear') { logs.innerHTML = ""; input.value = ""; return; }
+            else { response = "<span class='mc-red'>Unknown command.</span>"; }
+            logs.innerHTML += `<div><span class="mc-green">></span> ${input.value}</div><div>${response}</div>`;
+            logs.scrollTop = logs.scrollHeight; input.value = "";
+        }
+    }
+    // فتح الشات بحرف T
+    document.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 't' && document.activeElement !== document.getElementById('chat-input')) {
+            e.preventDefault(); document.getElementById('chat-input').focus();
+        }
+    });
+    </script>
 
 </body>
 </html>
-
-    setTimeout(() => { el.remove(); }, 1000);
-});
-</script>
