@@ -3,184 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoub_200 | Minecraft Developer</title>
+    <title>Ayoub | Backend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
     <style>
-        :root {
-            --primary: #00ff88; 
-            --bg: #050505; 
-            --text: #ffffff;
-        }
-
-        body {
-            background-color: var(--bg);
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            color: var(--text);
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            position: relative;
-        }
-
-        /* اسم الديسكورد في الزاوية العليا اليسرى */
-        .discord-tag {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            color: var(--primary);
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-left: 3px solid var(--primary);
-            padding-left: 10px;
-            font-size: 1.1rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            display: flex; align-items: center; gap:1200px; justify-content: center;
-            padding: 20px;
-        }
-
-        h1 { font-size: 4.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: -3px; }
-        .highlight { color: var(--primary); }
-        .skills { color: var(--primary); font-weight: bold; margin-bottom: 30px; letter-spacing: 3px; font-size: 1.4rem; }
-        p { font-size: 1.4rem; color: #aaa; line-height: 1.6; margin-bottom: 45px; max-width: 700px; text-align: left; } 
+        :root { --primary: #39FF14; --bg: #000; }
+        body { background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; align-items: center; min-height: 100vh; background-image: radial-gradient(#111 1px, transparent 1px); background-size: 30px 30px; }
+        .container { max-width: 1000px; margin-left: 10%; padding: 20px; }
+        h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: -2px; }
+        .highlight { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
+        .skills { color: var(--primary); font-weight: bold; margin: 15px 0; letter-spacing: 2px; font-size: 1rem; }
+        p { font-size: 1.2rem; color: #aaa; max-width: 550px; line-height: 1.6; margin-bottom: 40px; }
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 2px solid var(--primary); }
+        .btn-why { background: var(--primary); color: #000; }
+        .btn-projects { color: var(--primary); background: transparent; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(57, 255, 20, 0.4); }
         
-        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        
-        .btn {
-            padding: 15px 40px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            border: 2px solid var(--primary);
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        /* زر Why Me باللون الأخضر الكامل */
-        .btn-why {
-            background-color: var(--primary);
-            color: black;
-        }
-
-        /* زر المشاريع مفرغ (Outline) */
-        .btn-projects {
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
-            background: var(--primary);
-            color: black;
-        }
+        /* قسم المهارات النيون الجانبي - الهيبة */
+        .side-skills { position: fixed; right: 5%; top: 50%; transform: translateY(-50%); border-left: 2px solid var(--primary); padding-left: 30px; }
+        .skill-bar { margin-bottom: 25px; width: 250px; }
+        .bar-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 8px; color: var(--primary); }
+        .bar-bg { height: 8px; background: #222; border-radius: 10px; overflow: hidden; }
+        .bar-fill { height: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary); }
     </style>
 </head>
 <body>
-
-    <!-- اسم الديسكورد في الزاوية العليا اليسرى -->
-    <div class="discord-tag">DISCORD: .ayoub_200</div>
-
     <div class="container">
         <h1>BACKEND <span class="highlight">DEVELOPER</span></h1>
         <div class="skills">JAVA • SQL • SECURITY • OPTIMIZATION</div>
-        
         <p>I build high-performance core systems for Minecraft networks. Specialized in database synchronization, anti-lag infrastructure, and network security.</p>
-
         <div class="btn-group">
-            <!-- زر Why Me بجانب زر المشاريع -->
-            <a href="why-me.html" class="btn btn-why">Why Me?</a>
-            <a href="https://github.com/ayoub-Devolper/UltimisMC-Core-Systems/tree/main" class="btn btn-projects">My Projects</a>
+            <a href="why-me.html" class="btn btn-why">WHY ME?</a>
+            <a href="https://github.com" class="btn btn-projects">MY PROJECTS</a>
         </div>
     </div>
 
+    <div class="side-skills">
+        <div class="skill-bar">
+            <div class="bar-label">Java <span>95%</span></div>
+            <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <div class="bar-label">YAML <span>90%</span></div>
+            <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <div class="bar-label">Optimization <span>85%</span></div>
+            <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+        </div>
+    </div>
 </body>
 </html>
-<!-- قسم المهارات الاحترافي - في أسفل الصفحة لضمان الترتيب -->
-<div style="clear: both; width: 100%; height: 100px;"></div> <!-- مسافة أمان -->
-
-<style>
-    .skills-grid-new {
-        max-width: 1000px;
-        margin: 50px auto;
-        padding: 40px;
-        background: rgba(0, 0, 0, 0.9);
-        border: 2px solid #39FF14;
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
-        font-family: 'Courier New', monospace;
-    }
-    .skills-header-new {
-        color: #39FF14;
-        text-shadow: 0 0 15px #39FF14;
-        text-align: center;
-        font-size: 2.2rem;
-        margin-bottom: 40px;
-        letter-spacing: 3px;
-    }
-    .skill-bar-unit { margin-bottom: 30px; }
-    .skill-label-unit {
-        display: flex;
-        justify-content: space-between;
-        color: #fff;
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-    .skill-label-unit b { color: #39FF14; font-size: 1.3rem; }
-    .bar-bg-unit {
-        height: 15px;
-        background: #111;
-        border-radius: 10px;
-        border: 1px solid #333;
-        overflow: hidden;
-    }
-    .bar-fill-unit {
-        height: 100%;
-        background: linear-gradient(90deg, #1d6e0a, #39FF14);
-        box-shadow: 0 0 15px #39FF14;
-        border-radius: 10px;
-    }
-</style>
-
-<div class="skills-grid-new">
-    <h2 class="skills-header-new">TECHNICAL SKILLSET</h2>
-
-    <div class="skill-bar-unit">
-        <div class="skill-label-unit">Java Backend (Spigot/Paper) <b>95%</b></div>
-        <div class="bar-bg-unit"><div class="bar-fill-unit" style="width: 95%;"></div></div>
-    </div>
-
-    <div class="skill-bar-unit">
-        <div class="skill-label-unit">YAML Configuration & Systems <b>90%</b></div>
-        <div class="bar-bg-unit"><div class="bar-fill-unit" style="width: 90%;"></div></div>
-    </div>
-
-    <div class="skill-bar-unit">
-        <div class="skill-label-unit">Security & Anti-Cheat Logic <b>88%</b></div>
-        <div class="bar-bg-unit"><div class="bar-fill-unit" style="width: 88%;"></div></div>
-    </div>
-
-    <div class="skill-bar-unit">
-        <div class="skill-label-unit">Server Performance & Optimization <b>85%</b></div>
-        <div class="bar-bg-unit"><div class="bar-fill-unit" style="width: 85%;"></div></div>
-    </div>
-
-    <div class="skill-bar-unit">
-        <div class="skill-label-unit">HTML / CSS (Web Design) <b>80%</b></div>
-        <div class="bar-bg-unit"><div class="bar-fill-unit" style="width: 80%;"></div></div>
-    </div>
-</div>
-
-        <div class="skill-info-text">HTML / CSS (Web Design) <b>80%</b></div>
-        <div class="progress-track"><div class="progress-fill-neon" style="width: 80%;"></div></div>
-    </div>
-</div>
