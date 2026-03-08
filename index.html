@@ -198,21 +198,23 @@
     });
     </script>
 
-<!-- محرك أصوات ماين كرافت -->
+<!-- محرك أصوات ماين كرافت - نسخة أيوُب الجبارة -->
 <script>
-    // رابط صوت الضغطة الأصلي من مكتبة ماين كرافت
-    const mcClickSound = new Audio('https://www.zapsplat.com'); 
-    
-    // خفض الصوت قليلاً عشان ما يكون مزعج
-    mcClickSound.volume = 0.5;
+    // رابط مباشر ومستقر لصوت الكليك الأصلي
+    const mcClickSound = new Audio('https://assets.mixkit.co'); 
+    mcClickSound.volume = 0.4;
 
-    // وظيفة لتشغيل الصوت عند الضغط على أي زر
-    document.querySelectorAll('.btn, .project-card, .skill-tag').forEach(element => {
-        element.addEventListener('click', () => {
-            mcClickSound.currentTime = 0; // إعادة الصوت للبداية
-            mcClickSound.play();
-        });
+    // وظيفة لتشغيل الصوت عند الضغط على أي عنصر تفاعلي
+    const playSound = () => {
+        mcClickSound.currentTime = 0;
+        mcClickSound.play().catch(e => console.log("Audio waiting for user click..."));
+    };
+
+    // إضافة الصوت لكل الأزرار والبطاقات (تأكدنا من أسماء الكلاسات)
+    document.querySelectorAll('.btn, .btn-primary, .btn-secondary, .card, .project-card, .tag, .skill-tag, a').forEach(el => {
+        el.addEventListener('click', playSound);
     });
 </script>
+
 </body>
 </html>
