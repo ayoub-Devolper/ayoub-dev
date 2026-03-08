@@ -198,5 +198,21 @@
     });
     </script>
 
-    </body>
+<!-- محرك أصوات ماين كرافت -->
+<script>
+    // رابط صوت الضغطة الأصلي من مكتبة ماين كرافت
+    const mcClickSound = new Audio('https://www.zapsplat.com'); 
+    
+    // خفض الصوت قليلاً عشان ما يكون مزعج
+    mcClickSound.volume = 0.5;
+
+    // وظيفة لتشغيل الصوت عند الضغط على أي زر
+    document.querySelectorAll('.btn, .project-card, .skill-tag').forEach(element => {
+        element.addEventListener('click', () => {
+            mcClickSound.currentTime = 0; // إعادة الصوت للبداية
+            mcClickSound.play();
+        });
+    });
+</script>
+</body>
 </html>
