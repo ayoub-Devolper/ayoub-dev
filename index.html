@@ -227,6 +227,21 @@
         if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
     }
 </script>
+<script src="mc-button-effect.js"></script>
+بفكر شوية بالتصميم وبعدين أسوي الكود...جاهز! حط الملف في مشروعك وأضف هذا السطر قبل `</body>`:
 
+```html
+<script src="mc-button-effect.js"></script>
+```
+
+**شو يصير لما تضغط الزر:**
+
+- 🔊 **صوت XP** لزر "Check my Code" — نغمتين صاعدتين (Web Audio API، ما تحتاج ملف صوت)
+- 🔊 **صوت كليك MC** للباقي — thud قصير
+- ✨ **8 جزيئات** تطير من الزر — أحرف برمجية مضيئة مثل `{ }` `=>` `</>` `&&`
+- 📺 **Scan line** تمر على الزر — تأثير شاشة قديمة
+- 💚 **Scale animation** — الزر يتضغط وييجي للأمام مع glow أخضر
+
+**تخصيص إضافي:** إذا تبي زر معين يطلع صوت XP، أضف له `data-mc-sound="xp"`
 </body>
-<html>
+</html>
